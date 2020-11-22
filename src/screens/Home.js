@@ -9,7 +9,7 @@ const Home = () => {
   const classes = useStyles();
 
   return (
-    <>Home</>
+    <>Home2</>
   );
 };
 
