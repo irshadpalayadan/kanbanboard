@@ -8,7 +8,7 @@ import { useHistory } from "react-router-dom";
 const useStyles = makeStyles((theme) => ({
   appbar: {
     height: "64px",
-    backgroundColor: theme.palette.bright.blue
+    backgroundColor: theme.palette.kanban.blue
   },
   grow: {
     flexGrow: 1
@@ -29,16 +29,6 @@ const Header = () => {
           Home
         </Button>
         <div className={classes.grow} />
-        <Button color="inherit" onClick={() => history.push("/budget")}>
-          Budget plan
-        </Button>
-        <Button
-          color="inherit"
-          onClick={() => history.push("/diagram")}
-          className={classes.menu}
-        >
-          Diagram
-        </Button>
       </Toolbar>
     </AppBar>
   );
