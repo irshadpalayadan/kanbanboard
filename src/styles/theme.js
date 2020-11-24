@@ -8,6 +8,7 @@ export const theme = createMuiTheme({
       orange: "#FFCE00",
       green: "#CCFFAA",
       blue: "#1976d2",
+      lightBlue: "#add8e6",
       focus: "#CCFFCC"
     }
   }

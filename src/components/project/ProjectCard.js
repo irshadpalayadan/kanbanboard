@@ -1,5 +1,5 @@
 import React from "react";
-import { makeStyles, useTheme } from '@material-ui/core/styles';
+import { makeStyles } from '@material-ui/core/styles';
 import Card from '@material-ui/core/Card';
 import CardContent from '@material-ui/core/CardContent';
 import Typography from '@material-ui/core/Typography';
@@ -10,7 +10,9 @@ const useStyles = makeStyles((theme) => ({
     display: 'flex',
     width: "320px",
     height: "200px",
-    borderRadius: "16px"
+    borderRadius: "16px",
+    margin: "0px 20px 20px 0px",
+    backgroundColor: theme.palette.kanban.lightBlue
   },
   content: {
     display: 'flex',

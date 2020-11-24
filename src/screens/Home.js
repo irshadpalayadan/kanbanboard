@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { useSelector } from "react-redux";
 import { makeStyles } from "@material-ui/core/styles";
 import ProjectCard from "../components/project/ProjectCard";
@@ -9,7 +9,10 @@ import { useDispatch } from "react-redux";
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    padding: "20px"
+    padding: "20px",
+    display: "flex",
+    flexDirection: "row",
+    flexWrap: "wrap"
   }
 }));
 
