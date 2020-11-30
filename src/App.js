@@ -19,7 +19,7 @@ export default function App() {
               <Redirect to="/home" />
             </Route>
             <Route exact path="/home" component={Home} />
-            <Route path="/project/:projectId" component={TaskBoard} />
+            <Route path="/projects/:projectId" component={TaskBoard} />
             <Route>
               <ErrorPage/>
             </Route>

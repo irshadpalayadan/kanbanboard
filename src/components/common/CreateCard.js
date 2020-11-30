@@ -22,7 +22,7 @@ const useStyles = makeStyles((theme) => ({
   }
 }));
 
-const CreateProjectCard = ({btnAction}) => {
+const CreateCard = ({btnTitle, btnAction}) => {
   const classes = useStyles();
 
   return (
@@ -36,7 +36,7 @@ const CreateProjectCard = ({btnAction}) => {
                 onClick={btnAction}
                 startIcon={<AddCircleOutlineIcon />}
             >
-                Create New Project
+                {btnTitle}
             </Button>
         </Card>
     </>
@@ -44,4 +44,4 @@ const CreateProjectCard = ({btnAction}) => {
 }
 
 
-export default CreateProjectCard;
+export default CreateCard;

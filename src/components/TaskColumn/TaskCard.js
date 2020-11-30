@@ -1,5 +1,4 @@
 import React from "react";
-import { useHistory } from "react-router-dom";
 import { makeStyles } from '@material-ui/core/styles';
 import Card from '@material-ui/core/Card';
 import CardContent from '@material-ui/core/CardContent';
@@ -38,16 +37,14 @@ const useStyles = makeStyles((theme) => ({
   }
 }));
 
-const ProjectCard = ({data, onEdit, onDelete}) => {
-  const history = useHistory();
+const TaskCard = ({data, onEdit, onDelete}) => {
   const classes = useStyles();
+  console.log(onDelete)
+  console.log(data)
   const menuItem = [{title: "Edit", action: onEdit},{title: "Delete", action: onDelete}]
 
-  const projectClick = () => {
-    history.push(`/projects/${data.id}`)
-  }
   return (
-    <Card className={classes.root} onClick={projectClick}>
+    <Card className={classes.root}>
         <CardContent className={classes.content}>
           <div className={classes.titleRoot}>
             <Typography className={classes.title}>
@@ -55,13 +52,10 @@ const ProjectCard = ({data, onEdit, onDelete}) => {
             </Typography>
             <MoreActionMenu parentId={data.id} iconCss={classes.icon} items={menuItem}/>
           </div>
-          <Typography variant="subtitle1">
-            {data.description}
-          </Typography>
         </CardContent>
     </Card>
   );
 }
 
 
-export default ProjectCard;
+export default TaskCard;

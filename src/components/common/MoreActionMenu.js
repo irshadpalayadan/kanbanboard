@@ -6,14 +6,16 @@ import MoreVertIcon from '@material-ui/icons/MoreVert';
 import IconButton from '@material-ui/core/IconButton';
 
 
-const ProjectActionMenu = ({iconCss, parentId, items}) => {
+const MoreActionMenu = ({iconCss, parentId, items}) => {
   const [anchorEl, setAnchorEl] = React.useState(null);
 
   const handleClick = (event) => {
+    event.stopPropagation();
     setAnchorEl(event.currentTarget);
   };
 
-  const handleClose = () => {
+  const handleClose = (e) => {
+    e.stopPropagation();
     setAnchorEl(null);
   };
 
@@ -44,7 +46,7 @@ const ProjectActionMenu = ({iconCss, parentId, items}) => {
             <MenuItem>
                 <ListItemText 
                     primary={item.title} 
-                    onClick={() => {handleClose(); item.action(parentId)}} 
+                    onClick={(e) => {handleClose(e); item.action(parentId)}} 
                 />
             </MenuItem>
         )}
@@ -53,4 +55,4 @@ const ProjectActionMenu = ({iconCss, parentId, items}) => {
   );
 }
 
-export default ProjectActionMenu;
+export default MoreActionMenu;

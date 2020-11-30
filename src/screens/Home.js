@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { useSelector } from "react-redux";
 import { makeStyles } from "@material-ui/core/styles";
 import ProjectCard from "../components/project/ProjectCard";
-import CreateProjectCard from "../components/project/CreateProjectCard";
+import CreateCard from "../components/common/CreateCard";
 import ProjectDialog from "../components/project/ProjectDialog";
 import { deleteProjectById } from "../redux/actions/projectAction";
 import { useDispatch } from "react-redux";
@@ -51,7 +51,7 @@ const Home = () => {
             onEdit={editProject} 
             onDelete={deleteProject}/>
         )}
-        <CreateProjectCard btnAction={createProjectBtnHandler}/>
+        <CreateCard btnAction={createProjectBtnHandler} btnTitle="Create New Project"/>
       </div>
       <ProjectDialog show={showDialog} data={editData} closeHandler={closeHandler} />
     </>
