@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { makeStyles } from "@material-ui/core/styles";
 import { initSelectedColumn, clearSelectedColumn, deleteTaskColumnById } from "../redux/actions/taskColumnAction";
 import CreateCard from "../components/common/CreateCard";
-import TaskCard from "../components/TaskColumn/TaskCard";
+import TaskCard from "../components/TaskColumn/TaskColumnCard";
 import TaskColumnDialog from "../components/TaskColumn/TaskColumnDialog";
 
 

@@ -1,9 +1,11 @@
-import React from "react";
+import React, {useState} from "react";
 import { makeStyles } from '@material-ui/core/styles';
 import Card from '@material-ui/core/Card';
 import CardContent from '@material-ui/core/CardContent';
 import Typography from '@material-ui/core/Typography';
 import MoreActionMenu from "../common/MoreActionMenu";
+import AddIcon from '@material-ui/icons/Add';
+import TaskCard from "../Task/TaskCard";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -37,11 +39,14 @@ const useStyles = makeStyles((theme) => ({
   }
 }));
 
-const TaskCard = ({data, onEdit, onDelete}) => {
+const TaskColumnCard = ({data, onEdit, onDelete}) => {
   const classes = useStyles();
-  console.log(onDelete)
-  console.log(data)
+  const [showTaskDialog, SetShowTaskDialog] = useState(false)
   const menuItem = [{title: "Edit", action: onEdit},{title: "Delete", action: onDelete}]
+
+  const addTask = () => {
+
+  }
 
   return (
     <Card className={classes.root}>
@@ -50,12 +55,14 @@ const TaskCard = ({data, onEdit, onDelete}) => {
             <Typography className={classes.title}>
               {data.title}
             </Typography>
+            <AddIcon onClick={addTask}/>
             <MoreActionMenu parentId={data.id} iconCss={classes.icon} items={menuItem}/>
           </div>
+          <TaskCard data={{title: "abcd", desc: "helloo"}} />
         </CardContent>
     </Card>
   );
 }
 
 
-export default TaskCard;
+export default TaskColumnCard;

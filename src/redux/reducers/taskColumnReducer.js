@@ -27,10 +27,7 @@ import {
       }
       case DELETE_COLUMN: {
         const tempColumn = {...state.columns}
-        console.log(tempColumn)
-        console.log(action.payload.id)
         delete tempColumn[action.payload.id]
-        console.log(tempColumn)
         const tempSelectedColumn = {...state.selectedColumn}
         delete tempSelectedColumn[action.payload.id]
         return { ...state, columns: tempColumn, selectedColumn: tempSelectedColumn }
